@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "NAME HERE",
-  "license": "Apache 2.0"
+  "author": "Myra Rudy",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }

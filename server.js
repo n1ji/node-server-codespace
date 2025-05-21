@@ -1,20 +1,25 @@
 //include Node.js
 const http = require('http');
+const express = require('express');
+const app = express();
 
 //set port
 const port = 3000;
 
-//Create server, deal with requests/responses
-const server = http.createServer((req, res) => {
-  res.setHeader('Content-Type', 'text/html');
+app.get('/', (req, res) => {
+  res.send('<h1>Welcome to Node.js!</h1><p>Please add interesting info here.</p>');
+});
 
-  //default HTML
-  res.statusCode = 200;
-  res.end('<h1>Welcome to Node.js!</h1><p>Please add interesting info here.</p>');
-
+app.get('/about', (req, res) => {
+  res.send(`
+    <div style="text-align: center;">
+      <h1>Welcome to Myra's About Page</h1>
+      <p>Myra is a YearUp student interning at Reddit.</p>
+    </div>
+    `);
 });
 
 //Set server to listen for requests
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server running at port: ${port}/`);
 });
